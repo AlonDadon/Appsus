@@ -6,7 +6,6 @@ export class Home extends React.Component {
             <section className="home-container flex 
                                 space-around align-center">
                 <div>
-                    <h3>pulled</h3>
                     <h2>Emails,Notes {str} book</h2>
                     <h1>Where style and efficiency meets</h1>
                 </div>
