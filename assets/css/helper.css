@@ -1,15 +1,32 @@
-.flex{
+.flex {
     display: flex;
 }
-.justify-center{
+
+.justify-center {
     justify-content: center;
 }
-.space-around{
-    justify-content:space-around;
+
+.space-around {
+    justify-content: space-around;
 }
-.align-center{
+
+.align-center {
     align-items: center;
 }
-.column{
+
+.column {
     flex-direction: column;
+}
+
+.txt-center {
+    text-align: center;
+}
+.mb-5{
+    margin-bottom: 5px;
+}
+.mb-10{
+    margin-bottom: 10px;
+}
+.color-dark{
+    color: #05072f;
 }
