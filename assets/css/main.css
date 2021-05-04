@@ -1,4 +1,5 @@
 @import './base.css';
 @import './home.css';
 @import './helper.css';
-@import '../../apps/mail/assets/css/mail-preview.css'
+@import '../../apps/mail/assets/css/mail-style.css';
+@import '../../apps/note/assets/css/note-style.css';

@@ -27,6 +27,6 @@ function removeMail(mailId) {
 
 function setStarred(mailId){
     const mailIdx = gMails.findIndex(mail => mailId === mail.id)
-    gMails[mailIdx].isStarred = !gMails[mailIdx].isStarred;
+    gMails[mailIdx].isStarred = !gMails[mailIdx].isStarred
     return Promise.resolve()
 }
