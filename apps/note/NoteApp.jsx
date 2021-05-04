@@ -1,11 +1,13 @@
-import {Home} from './pages/Home.jsx'
+export class NoteApp extends React.Component {
+    state = {
 
-// Simple React Component
-export function App() {
-    return <section className="app">
-       <h1>My App</h1>
-       <UserPreview/>
-       <Home/>
-    </section>
+    }
+
+    render() {
+        return (
+
+            <h1>NOTE</h1>
+
+        )
+    }
 }
-
