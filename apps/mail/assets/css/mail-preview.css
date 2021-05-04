@@ -1,0 +1,14 @@
+.mail-preview{
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+}
+.mail-preview li {
+    display:flex;
+    justify-content: space-around;
+    
+}
+.mail-preview:hover{
+    border: 1px solid gainsboro;
+    box-shadow: 9px 4px 7px -5px rgba(97,97,97,0.81);
+
+}

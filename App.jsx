@@ -3,13 +3,14 @@ const { Route, Switch } = ReactRouterDOM
 import { Home } from './pages/Home.jsx'
 import { MailApp } from './apps/mail/MailApp.jsx'
 import { NoteApp } from './apps/note/NoteApp.jsx'
+import { AppHeader } from './cmps/AppHeader.jsx'
 
 
 // Simple React Component
 export function App() {
     return (
         <Router>
-            {/* <Header/> */}
+            <AppHeader />
             <main>
                 <Switch>
                 <Route component={NoteApp} path="/note" />
