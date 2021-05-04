@@ -1,30 +1,23 @@
-import {UserPreview} from './cmps/user-preview.jsx'
-import {Home} from './pages/home.jsx'
+const Router = ReactRouterDOM.HashRouter
+const { Route, Switch } = ReactRouterDOM
+import { Home } from './pages/home.jsx'
 
 // Simple React Component
 export function App() {
-    return <section className="app">
-       <h1>My App</h1>
-       <UserPreview/>
-       <Home/>
-    </section>
+    return (
+        <Router>
+            {/* <Header/> */}
+            <main>
+                {/* <Switch> */}
+                {/* <Route component={NoteApp} path="/Note" />
+                <Route component={MailApp} path="/mail/" />
+                <Route component={BookApp} path="/book" />
+            <Route component={AboutUs} path="/about" /> */}
+                <Route component={Home} path="/" />
+                {/* </Switch> */}
+            </main>
+            {/* <Footer/> */}
+        </Router>
+    )
 }
-
-
-
-// Using Class:
-// export class App extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <header>
-//                     <h1>Lets Play</h1>
-//                 </header>
-//                 <main>
-//                     <Home />
-//                 </main>
-//             </div>
-//         )
-//     }
-// }
 
