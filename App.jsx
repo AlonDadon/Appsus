@@ -1,6 +1,6 @@
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch } = ReactRouterDOM
-import { Home } from './pages/home.jsx'
+import { Home } from './pages/Home.jsx'
 
 // Simple React Component
 export function App() {
@@ -9,7 +9,7 @@ export function App() {
             {/* <Header/> */}
             <main>
                 {/* <Switch> */}
-                {/* <Route component={NoteApp} path="/Note" />
+                {/* <Route component={NoteApp} path="/note" />
                 <Route component={MailApp} path="/mail/" />
                 <Route component={BookApp} path="/book" />
             <Route component={AboutUs} path="/about" /> */}
