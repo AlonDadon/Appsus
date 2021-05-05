@@ -1,17 +1,17 @@
-.edit-txt-container input {
+.edit-note-container input {
     border-radius: .5rem;
     border: unset;
     padding: 10px 110px 10px 12px;
 }
 
-.edit-txt-container form {
+.edit-note-container form {
     line-height: 2rem;
     border-radius: .5rem;
     padding: 5px;
     box-shadow: 0 0px 1px 1px #9e9b9b;
 }
 
-.edit-txt-container .btn {
+.edit-note-container .btn {
     background-color: inherit;
     outline: none;
     border: none;
@@ -20,14 +20,17 @@
     transition: .2s;
 }
 
-.edit-txt-container .btn:hover {
+.edit-note-container .btn:hover {
     background-color: rgb(211 191 191);
 }
 
-.edit-txt-container textarea {
+.edit-note-container textarea {
     transition: .4s;
 }
 
-.active-txt-input {
+.active-note-input {
     padding: 0 40px 40px;
+    /* transform: scale(2.5);
+    background-color: thistle;
+    position: absolute; */
 }

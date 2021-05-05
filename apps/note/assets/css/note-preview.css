@@ -1,10 +1,23 @@
 .note {
-    /* width: 200px; */
     border: 1px solid #05072f;
     text-align: center;
-    /* padding: 40px; */
     padding: 10px 30px 2px;
     border-radius: 0.4rem;
     background-color: aliceblue;
     box-shadow: 0 0px 0.5px 0.5px #05072f;
+    margin-inline-end: 10px
+}
+
+.note .btn {
+    float: right;
+    font-size: 2rem;
+    background-color: unset;
+    border: unset;
+    color: darkcyan;
+    border-radius: 0.4rem;
+}
+.note .btn:hover {
+    background-color: #d4d8db;
+    
+
 }

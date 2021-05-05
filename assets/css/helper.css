@@ -28,3 +28,6 @@
 .color-dark{
     color: #05072f;
 }
+.wrap{
+    flex-wrap: wrap;
+}
