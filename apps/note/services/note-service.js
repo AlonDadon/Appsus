@@ -1,47 +1,72 @@
+import { utilService } from '../../../app-service/util-service.js'
 export const noteService = {
-    query
+    query,
+    saveNote,
+    deleteNote
 }
 
-const gNotes = [
-    {
-        type: 'NoteText',
-        isPinned: true,
-        info: {
-            txt: 'Fullstack Me Baby!'
-        }
-    },
-    {
-        type: 'NoteText',
-        isPinned: true,
-        info: {
-            txt: 'Fullstack Me Baby!'
-        }
-    },
-    {
-        type: 'NoteText',
-        isPinned: true,
-        info: {
-            txt: 'Fullstack Me Baby!'
-        }
-    },
-]
+const gNotes = []
+_createNodes(3)
+
 function query() {
     return Promise.resolve(gNotes)
 }
 
-function createNote() {
-    const note = {
-        type,
-        isPinned: 'note text',
+function saveNote(note) {
+    (note.id ? _updateNote(note) : _addNote(note))
+    return Promise.resolve(() => console.log('work'))
+}
+
+function _addNote(noteToAdd) {
+    const txt = (noteToAdd) ? (noteToAdd).txt : null
+    const note = _createNote(txt)
+    gNotes.unshift(note)
+    // _saveNoteToStorage();
+}
+
+function _updateNote(noteToUpdate) {
+    const { txt, id } = noteToUpdate
+    var noteIdx = gNotes.findIndex((note) => {
+        return note.id === id;
+    })
+    const updateNote = _createNote(txt, id)
+    gNotes.splice(noteIdx, 1, updateNote)
+    // _saveNotesToStorage();
+    return Promise.resolve(noteToUpdate)
+}
+
+function _createNodes(size) {
+    for (let i = 0; i < size; i++) {
+        _addNote()
+    }
+}
+
+
+
+function _createNote(txt, id = utilService.makeId()) {
+    (txt) ? txt = txt.txt : txt = utilService.makeLorem();
+    return {
+        id,
+        type: 'NoteText',
+        isPinned: true,
         info: {
             txt,
-            url,
-            title,
-            label: 'How was it:',
-            todos: [
-                { txt: 'Do that', doneAt: null },
-                { txt: 'Do this', doneAt: 187111111 }
-            ]
+            // url,
+            // title,
+            // label: 'How was it:',
+            // todos: [
+            //     { txt: 'Do that', doneAt: null },
+            //     { txt: 'Do this', doneAt: 187111111 }
+            // ]
         }
     }
+}
+
+function deleteNote(noteId) {
+    var noteIdx = gNotes.findIndex(function (note) {
+        return noteId === note.id
+    })
+    gNotes.splice(noteIdx, 1)
+    // _saveCarsToStorage();
+    return Promise.resolve()
 }

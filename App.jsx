@@ -5,8 +5,6 @@ import { MailApp } from './apps/mail/MailApp.jsx'
 import { NoteApp } from './apps/note/NoteApp.jsx'
 import { AppHeader } from './cmps/AppHeader.jsx'
 
-
-// Simple React Component
 export function App() {
     return (
         <Router>
