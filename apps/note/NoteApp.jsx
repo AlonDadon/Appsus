@@ -6,7 +6,6 @@ import { NoteList } from './cmps/NoteList.jsx'
 export class NoteApp extends React.Component {
     state = {
         notes: null,
-        msg: null
     }
     componentDidMount() {
         this.loadNotes()
@@ -22,12 +21,12 @@ export class NoteApp extends React.Component {
 
     render() {
         const { txt, notes } = this.state
-        // console.log(txt);
+        // console.log(txt)
         return (
             <section>
                 <h1 className="txt-center" >NOTE page</h1>
                 <EditTxt loadNotes={this.loadNotes} />
-                <NoteList notes={notes}  />
+                <NoteList loadNotes={this.loadNotes} notes={notes}  />
                 
                 {/* notelist */}
                 {/* notePER(DNYMIC) */}
