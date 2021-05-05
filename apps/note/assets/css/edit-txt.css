@@ -11,7 +11,6 @@
     box-shadow: 0 0px 1px 1px #9e9b9b;
 }
 
-
 .edit-txt-container .btn {
     background-color: inherit;
     outline: none;
@@ -23,8 +22,12 @@
 
 .edit-txt-container .btn:hover {
     background-color: rgb(211 191 191);
-   
 }
-.active-txt-input{
+
+.edit-txt-container textarea {
+    transition: .4s;
+}
+
+.active-txt-input {
     padding: 0 40px 40px;
 }
