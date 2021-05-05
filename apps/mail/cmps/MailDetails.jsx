@@ -1,4 +1,4 @@
-import { mailService } from './services/mail.service.js'
+import { mailService } from '../services/mail.service.js'
 
 export class MailDetails extends React.Component {
     state = {

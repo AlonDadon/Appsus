@@ -21,14 +21,15 @@ export class EditTxt extends React.Component {
         const { txt } = this.state
         const { id } = this.props
         // here
-        // this.setState({ id: id })
+        this.setState({ id: id }, () => {
+            noteService.saveNote(this.state).then(() => {
+                this.props.loadNotes()
+            })
+        })
         // todo fix setState
-        this.state.id = id
+        // this.state.id = id
         if (!txt) return alert('fill the text field')
     
-        noteService.saveNote(this.state).then(() => {
-            this.props.loadNotes()
-        })
     }
 
     render() {

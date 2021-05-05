@@ -10,30 +10,36 @@ export class MailApp extends React.Component {
     componentDidMount() {
         this.loadMails()
     }
-    loadMails(){
+    loadMails() {
         mailService.query()
             .then(mails => {
                 this.setState({ mails })
             })
     }
-    onRemoveMail = (mailId) =>{
+    onRemoveMail = (mailId) => {
         mailService.removeMail(mailId)
-            this.loadMails()
+        this.loadMails()
     }
-    onSetStarred = (mailId) =>{
+    onSetStarred = (mailId) => {
         mailService.setStarred(mailId)
     }
 
     render() {
-        const {mails} = this.state
-        if(!mails) return <h1>Loading...</h1>
+        const { mails } = this.state
+        const { mailId} = this.props.match.params
+        if (!mails) return <h1>Loading...</h1>
         return (
             <section className="mail-main-container">
-                <Route component={MailDetails} path="/mail/:mailId" /> 
-                {/* thinking of making MailAppNav comp that will contorol the navugation inside the mail app. */}
+                <section>
 
-                <MailList mails={mails} onRemoveMail={this.onRemoveMail} 
-                    onSetStarred={this.onSetStarred}/>
+                </section>
+                {/* <switch> */}
+                    <Route component={MailDetails} path="/mail/:mailId" />
+                    {/* <Route component={Home} path="/" />
+                    </switch> */}
+                    {/* thinking of making MailAppNav comp that will contorol the navugation inside the mail app. */}
+                   { !mailId && <MailList mails={mails} onRemoveMail={this.onRemoveMail}
+                        onSetStarred={this.onSetStarred} /> }
             </section>
 
         )
