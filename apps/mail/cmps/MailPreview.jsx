@@ -1,17 +1,19 @@
 const { Link } = ReactRouterDOM
-export function MailPreview({ mail,onRemoveMail, onSetStarred }) {
+export function MailPreview({ mail,onRemoveMail, onSetStarred, onReadMail }) {
     return (
+        <div className={`mail-preview ${(mail.isRead)? "" : "bold"} clean-list flex row space-around`}>
+            <Link to={`/mail/${mail.id}` }>
+            <div className="mail-info">
 
-        <div className="mail-preview clean-list flex column">
-            <li>
-            <Link to={`/mail/${mail.id}`}>
-                {mail.sentBy.name}
-                <span>{mail.sentBy.mail}</span>
+            <li onClick={() => onReadMail(mail.id)}>
+           
+                <span>{mail.to}</span>
                 <span>{mail.subject}</span>
-            </Link>
-                <span onClick={() => onRemoveMail(mail.id)}>X</span>
-                <span onClick={() => onSetStarred(mail.id)}>✨</span>
             </li>
+            </div>
+        </Link>
+                <button className="preview-btn hidden" onClick={() => onRemoveMail(mail.id)} >X</button>
+                <button className="preview-btn hidden" onClick={() => onSetStarred(mail.id)} >✨</button>
         </div>
     )
 }

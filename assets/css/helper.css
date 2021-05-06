@@ -28,3 +28,9 @@
 .color-dark{
     color: #05072f;
 }
+.bold{
+    font-weight: 700;
+}
+.hidden{
+    visibility: hidden;
+}
