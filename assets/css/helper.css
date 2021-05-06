@@ -34,3 +34,6 @@
 .hidden{
     visibility: hidden;
 }
+.wrap{
+    flex-wrap: wrap;
+}

@@ -1,6 +1,9 @@
 
-// להפוך אותה לקלאס ולהפוך אותה לקומפוננטה דינמית שפותחת את הוספת טקסט
-import { EditTxt } from './EditTxt.jsx'
+
+import { NoteTxt } from './DynamicCmp/preview/NoteTxt.jsx'
+import { NoteTodos } from './DynamicCmp/preview/NoteTodos.jsx'
+// import { NoteTodos } from './DynamicCmp/preview/NoteTodos.jsx'
+
 // export function NotePreview(props) {
 export class NotePreview extends React.Component {
     state = {
@@ -8,25 +11,46 @@ export class NotePreview extends React.Component {
         prevSelect: null
     }
 
-    onToggleEditTxt = (id) => {
+    onToggleEditNote = (id) => {
         this.setState({ selectNote: id })
     }
 
     render() {
-        console.log(this.state);
-        const { onDeleteNote, loadNotes, onSaveNote } = this.props
+        // const { onDeleteNote, loadNotes, onSaveNote } = this.props
         const { type, isPinned, info, id } = this.props.note
-        return (
-            <section className="note mb-10 color-dark">
-                <button onClick={() => onDeleteNote(id)}>❌❎</button>
-                <p onClick={() => this.onToggleEditTxt(id)} >{info.txt}</p>
+        {/* <NoteTxt /> */ }
+        {/* <NoteImg />
+                <NoteTodos />
+                <NoteVideo /> */}
 
-                { this.state.selectNote && <EditTxt id={id}
-                    loadNotes={loadNotes}
-                    onSaveNote={onSaveNote}
-                    onToggleEditTxt={this.onToggleEditTxt}
-                ></EditTxt>}
-            </section>
+        {/* <NoteAudio>: bonus
+             <NoteMap>: bonus */}
+
+        const DynamicCmp = () => {
+
+            switch (type) {
+                case 'NoteTxt':
+                    return <NoteTxt props={this.props} />
+                case 'NoteTodos':
+                    return <NoteTodos />
+                default:
+                    return //...some default error view
+            }
+        }
+
+        // console.log(DynamicCmp);
+        return (
+            // <section className="note mb-10 color-dark">
+            <DynamicCmp />
+            //     <button onClick={() => onDeleteNote(id)}>❌❎</button>
+            //     <p onClick={() => this.onToggleEditNote(id)} >{info.txt}</p>
+
+            //     { this.state.selectNote && <EditNote id={id}
+            //         loadNotes={loadNotes}
+            //         onSaveNote={onSaveNote}
+            //         onToggleEditNote={this.onToggleEditNote}
+            //     ></EditNote>}
+            // </section>
 
         )
     }

@@ -6,7 +6,7 @@ export const noteService = {
 }
 
 const gNotes = []
-_createNodes(3)
+_createNotes(10)
 
 function query() {
     return Promise.resolve(gNotes)
@@ -14,7 +14,7 @@ function query() {
 
 function saveNote(note) {
     (note.id ? _updateNote(note) : _addNote(note))
-    return Promise.resolve(() => console.log('work'))
+    return Promise.resolve()
 }
 
 function _addNote(noteToAdd) {
@@ -35,7 +35,7 @@ function _updateNote(noteToUpdate) {
     return Promise.resolve(noteToUpdate)
 }
 
-function _createNodes(size) {
+function _createNotes(size) {
     for (let i = 0; i < size; i++) {
         _addNote()
     }
@@ -47,7 +47,7 @@ function _createNote(txt, id = utilService.makeId()) {
     (txt) ? txt = txt.txt : txt = utilService.makeLorem();
     return {
         id,
-        type: 'NoteText',
+        type: 'NoteTxt',
         isPinned: true,
         info: {
             txt,
