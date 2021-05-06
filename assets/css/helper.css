@@ -1,33 +1,62 @@
 .flex {
     display: flex;
 }
+
 .justify-center {
     justify-content: center;
 }
+
 .space-around {
     justify-content: space-around;
 }
+
 .align-center {
     align-items: center;
 }
+
 .column {
     flex-direction: column;
 }
-.clean-list{
+
+.clean-list {
     list-style: none;
 }
+
 .txt-center {
     text-align: center;
 }
-.mb-5{
+
+.mb-5 {
     margin-bottom: 5px;
 }
-.mb-10{
+
+.mb-10 {
     margin-bottom: 10px;
 }
-.color-dark{
+
+.color-dark {
     color: #05072f;
 }
-.wrap{
+
+.wrap {
     flex-wrap: wrap;
+}
+
+.screen {
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #4c454547;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s;
+}
+ .screen.active  {
+    pointer-events: auto;
+    opacity: .5;
 }

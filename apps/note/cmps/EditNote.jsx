@@ -41,9 +41,9 @@ export class EditNote extends React.Component {
         const { type } = this.props
 
         const DynamicCmp = () => {
-            console.log(type);
+            // console.log(type);
             switch (type) {
-                case 'NoteText':
+                case 'NoteTxt':
                     return <NoteTxt props={this.props} />
                 // case 'NoteTodos':
                 //     return <NoteTodos />

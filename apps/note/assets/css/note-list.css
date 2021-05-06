@@ -1,0 +1,21 @@
+.note-list-container {
+    gap: 10px;
+}
+
+.todo {
+    border: 1px solid black;
+    border-radius: .5rem;
+    padding: 10px;
+}
+.todo ul{
+    border-bottom: 1px solid black;
+}
+.todo .btn{
+    background-color: unset;
+    border: unset;
+    transition: .5s;
+}
+/* .todo .btn:hover{
+    background-color: cadetblue;
+   
+} */

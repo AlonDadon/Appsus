@@ -1,0 +1,67 @@
+.todo p {
+    display: inline-block;
+    margin-inline-end: 5px;
+}
+
+.todo {
+    position: relative;
+    cursor: pointer;
+    background: linear-gradient( 357deg, #96b0ff, #f2f2ff);
+    transition: ease-in .4s;
+}
+
+.todo ul {
+    padding: 10px 5px 0;
+}
+
+.todo li {
+    margin-bottom: 5px;
+    border-radius: .5rem;
+    padding-inline-start: 12px;
+    position: relative;
+    transition: .6s;
+}
+.todo ul li:last-child{
+    margin-bottom: 35px;
+}
+
+.todo li:hover {
+    background-color: #9ec8e87d
+}
+.todo-form{
+    position: relative;
+}
+
+.todo input {
+    padding: 10px 0;
+    background-color: unset;
+    border: unset;
+    color: #090619;
+    line-height: 6px;
+    outline: none;
+    width: 90%;
+}
+.todo .todo-checkbox {
+    width: 10%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+/* .todo input.active {
+pos
+} */
+.todo.active-edit-note .input {
+    line-height:unset
+}
+
+.active-edit-note {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    padding: 30px;
+    z-index: 10;
+}

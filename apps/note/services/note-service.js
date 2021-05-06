@@ -6,7 +6,7 @@ export const noteService = {
 }
 
 const gNotes = []
-_createNotes(10)
+_createNotes(3)
 
 function query() {
     return Promise.resolve(gNotes)
@@ -21,6 +21,7 @@ function _addNote(noteToAdd) {
     const txt = (noteToAdd) ? (noteToAdd).txt : null
     const note = _createNote(txt)
     gNotes.unshift(note)
+    gNotes.unshift()
     // _saveNoteToStorage();
 }
 

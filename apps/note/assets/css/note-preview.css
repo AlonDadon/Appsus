@@ -16,8 +16,40 @@
     color: darkcyan;
     border-radius: 0.4rem;
 }
+
 .note .btn:hover {
     background-color: #d4d8db;
-    
+}
 
+.btn-note-container {
+    padding: 5px;
+    border-radius: .5rem;
+    opacity: 0;
+    transition: .6s;
+}
+
+.btn-note-container:hover {
+    opacity: 1;
+}
+
+.btn-note-container .btn {
+    padding: 7px;
+    font-size: 1.2rem;
+    border-radius: .8rem;
+}
+
+.btn-note-container .btn:hover {
+    background-color: #d4d8db;
+}
+
+.btn-mark {
+    position: absolute;
+    top: 0%;
+    font-size: 1.4rem;
+    opacity: 0;
+    transition: .6;
+}
+
+.todo:hover .btn-mark {
+    opacity: .7;
 }

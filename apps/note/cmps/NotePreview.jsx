@@ -30,7 +30,7 @@ export class NotePreview extends React.Component {
 
             switch (type) {
                 case 'NoteTxt':
-                    return <NoteTxt props={this.props} />
+                    return <NoteTodos props={this.props} />
                 case 'NoteTodos':
                     return <NoteTodos />
                 default:
@@ -41,7 +41,10 @@ export class NotePreview extends React.Component {
         // console.log(DynamicCmp);
         return (
             // <section className="note mb-10 color-dark">
-            <DynamicCmp />
+         
+                <DynamicCmp />
+
+          
             //     <button onClick={() => onDeleteNote(id)}>❌❎</button>
             //     <p onClick={() => this.onToggleEditNote(id)} >{info.txt}</p>
 
