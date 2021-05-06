@@ -38,7 +38,13 @@
     color: #05072f;
 }
 
-.wrap {
+.bold{
+    font-weight: 700;
+}
+.hidden{
+    visibility: hidden;
+}
+.wrap{
     flex-wrap: wrap;
 }
 

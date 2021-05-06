@@ -13,3 +13,10 @@
     box-shadow: 9px 4px 7px -5px rgba(97,97,97,0.81);
 
 }
+.mail-preview:hover .preview-btn{
+background-color: rgb(214, 205, 205);
+visibility:visible;
+}
+/* .preview-btn:hover{
+    background-color: rgb(165, 59, 59);
+} */

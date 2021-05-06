@@ -1,1 +1,3 @@
-@import './mail-preview.css'
+@import './mail-preview.css';
+@import './mail-edit.css';
+@import './mail-filter.css';
