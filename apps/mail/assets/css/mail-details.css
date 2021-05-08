@@ -16,7 +16,7 @@
     fill: green;
 }
 .mail-btn:hover .back-svg path{
-    fill: green;
+    fill: rgb(89, 157, 247);
 }
 .mail-btn .back-svg{
     height: 1.7rem;
@@ -30,7 +30,4 @@ height: 1.9rem;
 .reply-mail-btn{
     border:none;
     width: 16px;
-}
-.detail-info{
-
 }
