@@ -1,20 +1,24 @@
-.app-header{
+.app-header {
     padding: 15px;
     height: 100%;
-    background-color: #bdd7f8
+    background-color: #bdd7f8;
+    margin-bottom: 10px;
 }
-.nav-header{
+
+.nav-header {
     width: 100%;
     justify-content: space-between;
     /* background-color: #fff; */
 }
-.nav-list{
+
+.nav-list {
     margin-inline-end: 50px;
 }
-.nav-list > *{
+
+.nav-list>* {
     margin-inline-end: 10px;
 }
-.nav-list > *:hover{
-    /* background-color: rgba(158, 198, 250, 0.637); */
-    box-shadow: 2px -1px 3px 1px rgb(106 168 249 / 58%);
+
+.nav-list>*:hover {
+    color: #0f0749;
 }

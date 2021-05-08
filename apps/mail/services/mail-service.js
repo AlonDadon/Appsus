@@ -38,7 +38,6 @@ console.log(filterBy);
     return Promise.resolve(filteredMails)
 }
 function createMails() {
-    console.log(gMails);
     let mails = storageService.loadFromStorage(MAILKEY)
     if (!mails || !mails.length) {
         mails = [
@@ -80,7 +79,6 @@ function createMails() {
         ]
     }
     gMails = mails
-    console.log(gMails);
     _saveMailsToStorage()
 }
 

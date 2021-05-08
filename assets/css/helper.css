@@ -9,7 +9,8 @@
 .space-around {
     justify-content: space-around;
 }
-.space-between{
+
+.space-between {
     justify-content: space-between;
 }
 
@@ -25,9 +26,10 @@
     list-style: none;
 }
 
-.wrap{
+.wrap {
     flex-wrap: wrap;
 }
+
 .txt-center {
     text-align: center;
 }
@@ -44,14 +46,16 @@
     color: #05072f;
 }
 
-.bold{
+.bold {
     color: rgb(59, 59, 59);
 }
-.hidden{
+
+.hidden {
     visibility: hidden;
 }
-.logo{
-    font-family:'logo' ;
+
+.logo {
+    font-family: 'logo';
 }
 
 .screen {
@@ -68,7 +72,12 @@
     pointer-events: none;
     transition: .2s;
 }
- .screen.active  {
+
+.screen.active {
     pointer-events: auto;
     opacity: .5;
+}
+
+.active-nav {
+    text-decoration: underline;
 }

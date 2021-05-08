@@ -1,102 +1,95 @@
 
-import { todoService } from '../../../services/todo-service.js'
-
 export class NoteTodos extends React.Component {
     state = {
-        id: null,
-        prevSelect: null,
-        todos: [{ txt: '' }],
+        type: null,
+        noteId: null,
         todoId: null,
-        todo: {
-            txt: null,
-            isAddLine: null
-        }
+        todos: null,
+        txt: null,
+        isTyping: null,
+        isFocus: null,
+        isOpenModal: null
     }
-    componentDidMount() {
-        this.loadTodos()
-    }
-    setId = (id) => {
-        this.setState({ id: id })
-    }
-    setTodoId = (id) => {
-        console.log(id);
-        this.setState({ todoId: id })
-        console.log(this.state);
-    }
+    inputRef = React.createRef()
+    cleanInputRef = React.createRef()
 
-    loadTodos = () => {
-        todoService.query()
-            .then(todos => {
-                // console.log(todos.length, 'service');
-                // console.log(this.state.todos.length, 'state');
-                if (todos.length === this.state.todos.length) {
-                    // todos.push({ txt: '' })
-                }
-                this.setState({ todos: todos })
-                this.setState({ todos })
-            })
+    componentDidMount() {
+        const { type, noteId, info } = this.props.props.note
+        this.setState({ type: type })
+        this.setState({ noteId: noteId })
+        this.setState({ todos: info.todos })
     }
 
     handleChange = ({ target }) => {
+        this.setState({ isTyping: true })
         const field = target.name
         const value = target.value
         this.setState(prevState => ({
-            todo: {
-                ...prevState.todo,
+            txt: {
+                ...prevState.txt,
                 [field]: value
             },
         }))
     }
     onAddLine = (ev) => {
         ev.preventDefault()
-        // console.log('id', id);
-        const { txt } = this.state.todo
-        const { todoId } = this.state
-        console.log(todoId);
-        if (!txt) return alert('Add text')
-        // this.setState(this.todoId = id)
-        // console.log(this.state.todoID);
-        todoService.saveTodo({ txt: txt, id: todoId })
-        this.setState({ txt: null }, () => { this.loadTodos() })
+        this.setState({ isTyping: null })
+        this.setState({ isFocus: true })
+        this.inputRef.current.value = ''
+        const { onSaveTodos } = this.props.props.props
+        onSaveTodos(this.state)
+    }
+    setTodoId = (id, txt) => {
+        this.setState({ todoId: id })
+        this.setState({ txt: txt })
+    }
+    toggleModal = (isOpenModal) => {
+        this.setState({ isOpenModal: isOpenModal })
     }
 
     render() {
-        // console.log(this.state.txt);
-        const { onDeleteNote, loadNotes, onSaveNote } = this.props.props
-        const { type, isPinned, info, id } = this.props.props.note
-        const { txt } = this.state
-        const { todos } = this.state
-
+        const { txt, todos, isTyping, isFocus } = this.state
         return (
             <div>
-                {<div className={`${this.state.id && 'active'} screen`} onClick={() => this.setId(null)}></div>}
-                <section onClick={() => this.setId(id)} className={`${this.state.id && 'active-edit-note'} todo mb-10 color-dark`} >
+                {<div className={`${this.state.isOpenModal && 'active'} screen`} onClick={() => this.toggleModal(false)}></div>}
+                <section onClick={() => this.toggleModal(true)} className={`${this.state.isOpenModal && 'active-edit-note'} todo mb-10 color-dark`} >
                     <button className="btn-mark btn" >📌</button>
                     <ul className="clean-list">
-                        {/* {todos.map((todo, idx) => <li key={idx + todo} ><textarea  onChange={this.handleChange} txt={txt} placeholder="Add a comment" defaultValue={todo} ></textarea><input className="todo-checkbox" type="checkbox" name="" id="" /></li>)} */}
-                        {todos.map((todo, idx) => <li key={idx + todo} >
-                            <form onSubmit={() => this.onAddLine(event, todo.id)} >
+                        {todos && todos.map((todo, idx) =>
+                            <li key={idx + todo} >
+                                <form onSubmit={() => this.onAddLine(event)} >
+                                    <input type="text"
+                                        onClick={() => this.setTodoId(todo.id, todo.txt)}
+                                        autoFocus
+                                        name={'txt'}
+                                        onChange={this.handleChange}
+                                        txt={txt}
+                                        placeholder="Add a comment"
+                                        autoComplete="off"
+                                        defaultValue={todo.txt}
+                                        ref={todos.length === idx && this.cleanInputRef}
+                                    />
+                                </form>
+                                <input className="todo-checkbox" type="checkbox" name="" id="" /></li>)}
+
+                        {isTyping && <li>
+                            <form onSubmit={() => this.onAddLine(event)} >
                                 <input type="text"
-                                    onClick={() => this.setTodoId(todo.id)}
-                                    autoFocus
+                                    onClick={() => this.setTodoId(null)}
+                                    autoFocus={!isFocus && false}
                                     name={'txt'}
                                     onChange={this.handleChange}
                                     txt={txt}
                                     placeholder="Add a comment"
                                     autoComplete="off"
-                                    defaultValue={todo.txt} />
+                                    defaultValue={''}
+                                    ref={this.inputRef}
+
+                                />
                             </form>
-
-                            <input className="todo-checkbox" type="checkbox" name="" id="" /></li>)}
+                            <input className="todo-checkbox" type="checkbox" name="" id="" /></li>}
                     </ul>
-
-
-
-
-
-
                     <div className="btn-note-container" >
-                        <button onClick={() => onSaveNote(id)}>Close</button>
                         <button className="btn">...</button>
                         <button className="btn" onClick={() => onDeleteNote(id)}>🗑</button>
                         <button className="btn">🎴</button>
@@ -105,8 +98,6 @@ export class NoteTodos extends React.Component {
                     </div>
                 </section>
             </div>
-
-
         )
     }
 }

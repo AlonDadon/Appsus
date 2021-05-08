@@ -1,0 +1,16 @@
+
+.btn-add{
+    background-color: #9999a6;
+    color: #cddff6;
+    padding: 10px;
+    border-radius: .5rem;
+    font-size: 1rem;
+    transition: .5s;
+}
+.btn-add:hover{
+    color: #090839;
+}
+
+.note-btn-container{
+    margin-bottom: 10px;
+}
