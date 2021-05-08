@@ -1,12 +1,40 @@
 .mail-edit{
     position: fixed;
     right: 50;
-    bottom: 25px;
-    right: 50px;
+    bottom: 0px;
+    right: 200px;
     width: 350px;
-    height: 200px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
 }
-.mail-edit form{
+.mail-edit h1{
+    font-size: 1.5rem;
+    background-color: rgba(158, 198, 250, 0.637);
+    border-radius: 6px;
+
+}
+.form-edit{
     display: flex;
     flex-direction: column;
+}
+.compose-mail{
+    margin: 0 5px 2px 5px;
+    border:none;
+    border-bottom: solid 0.5px rgba(158, 198, 250, 0.637);;
+}
+.compose-subject{
+    margin: 0 5px 2px 5px;
+    border:none;
+    border-bottom: solid 0.5px rgba(158, 198, 250, 0.637);;
+}
+.compose-body{
+    height:10em;
+    border:none;
+}
+.compose-send-btn{
+    width: 50px;
+   border-radius: 5px;
+    border: none;
+    background-color: rgba(158, 198, 250, 0.637);
 }

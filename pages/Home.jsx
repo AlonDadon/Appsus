@@ -6,10 +6,11 @@ export class Home extends React.Component {
             <section className="home-container flex 
                                 space-around align-center">
                 <div>
-                    <h2>Emails,Notes {str} book</h2>
-                    <h1>Where style and efficiency meets</h1>
+                    <h1 className="logo">Apsus</h1>
+                    <h2>Precision, Perfection , Personalization</h2>
+                    <h3>One place for your E-mails, Notes {str} Books</h3>
                 </div>
-                <img src="../assets/img/HomeBG.jpg" alt="" />
+                <div className="desk-svg"></div>
             </section>
         )
     }

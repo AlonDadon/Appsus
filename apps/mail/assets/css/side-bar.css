@@ -1,0 +1,59 @@
+.side-bar{
+    width: 25%;
+    height: 100%vh;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    padding:15px
+}
+.side-bar > *:not(:first-child){
+padding-inline-start: 15px;
+}
+.compose-btn{
+    margin-inline-end: 50px;
+    border-radius: 25px;
+    width: 85%;
+    font-size: 1.08rem;
+    border: solid 0.5px ;
+    background-color: none;
+    margin-bottom: 10px;
+    border: solid 0.5px #cccdce4f;
+
+}
+.compose-btn:hover{
+    box-shadow: 9px 4px 7px -5px rgba(97,97,97,0.81);
+}
+.compose-btn:hover .plus-svg path{
+    fill:rgb(89, 157, 247);
+}
+.side-bar > *:not(:first-child):hover{
+    background-color: rgba(158, 198, 250, 0.637);
+    border-radius: 0 20px 20px 0 ;
+}
+.link-svg path{
+    fill: rgb(92, 92, 92);
+}
+.link-svg{
+    height: 0.9rem;
+}
+.plus-svg path:hover{
+    fill:rgba(158, 198, 250, 0.637);
+}
+.inbox-btn:hover .inbox-svg path{
+    fill:rgb(89, 157, 247);
+}
+.star-svg path:hover{
+    fill:gold;
+}
+.starred-btn:hover .star-svg path{
+    fill:gold;
+}
+.sent-mail-btn:hover .sent-mail-svg path{
+    fill:rgb(89, 157, 247);
+}
+.trash-svg path:hover{
+    fill:red;
+}
+.active-star .star-svg path{
+    fill:gold;
+}

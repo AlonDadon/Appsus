@@ -26,11 +26,11 @@ export class AppHeader extends React.Component {
   render() {
 
     return (
-      <header className="app-header">
+      <header className="app-header flex align-center">
         {/* <UserMsg /> */}
-        <h1>Apsus</h1>
-        <nav>
-          <ul className="clean-list flex space-around align-items">
+        <nav className="nav-header container flex align-center">
+        <h1 className="logo">Apsus</h1>
+          <ul className="nav-list clean-list flex align-center">
             <li><NavLink exact to="/" activeClassName="active-nav">Home</NavLink></li>
             <li><NavLink to="/note" >Notes</NavLink></li>
             <li><NavLink to="/mail" >Mails</NavLink></li>

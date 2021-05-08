@@ -1,0 +1,36 @@
+.mail-detail{
+    padding: 10px;
+}
+.detail-btns > *{
+    margin-inline-end:30px;
+}
+.detail-body{
+    width:70%;
+}
+.mail-btn{
+    border:none;
+    width: 30px;
+    background-color: inherit;
+}
+.mail-btn:hover .reply-svg path{
+    fill: green;
+}
+.mail-btn:hover .back-svg path{
+    fill: green;
+}
+.mail-btn .back-svg{
+    height: 1.7rem;
+}
+.mail-btn .trash-svg {
+    height: 1.7rem;
+}
+.mail-btn .reply-svg{
+height: 1.9rem;
+}
+.reply-mail-btn{
+    border:none;
+    width: 16px;
+}
+.detail-info{
+
+}

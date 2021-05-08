@@ -1,6 +1,6 @@
 const { NavLink, withRouter } = ReactRouterDOM
 
-import { mailService } from '../services/mail.service.js'
+import { mailService } from '../services/mail-service.js'
 
 class _MailEdit extends React.Component {
 
@@ -40,26 +40,26 @@ class _MailEdit extends React.Component {
         const { mail } = this.state
         mailService.saveMail(mail).then(() => {
             this.props.history.push('/mail')
-           if (!id) this.props.setComposing()
+            if (!id) this.props.setComposing()
         })
     }
 
     render() {
         // const { mail } = this.state
         // console.log(this.props);
+        const trashSvg = <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash" className="link-svg trash-svg svg-inline--fa fa-trash fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path></svg>
         const { subject, body, id, to } = this.state.mail
         return (
             <div className="mail-edit">
-                <form onSubmit={this.onSaveMail}>
-                    <h1>{id ? 'Reply' : 'New message'}</h1>
-                    <label>To:
-                    <input type="email" name="to" value={to} onChange={this.handleChange} required />
-                    </label>
-                    <label>subject
-                     <input type="text" name="subject" value={subject} onChange={this.handleChange} required />
-                    </label>
-                    <input type="textarea" name="body" value={body} onChange={this.handleChange} required />
-                    <button>Send</button>
+                <h1 className="compose-head">{id ? 'Reply' : 'New message'}</h1>
+                <form className="form-edit" onSubmit={this.onSaveMail}>
+                    <input type="email" id="email" name="to" placeholder="To" className="compose-mail" value={to} onChange={this.handleChange} required />
+                    <input type="text" id="compose-subject" placeholder="Subject" name="subject" className="compose-subject" value={subject} onChange={this.handleChange} required />
+                    <input type="textarea" name="body" className="compose-body" value={body} onChange={this.handleChange} required />
+                    <div className="Compose-btns flex space-between">
+                        <button className="compose-send-btn">Send</button>
+                        <button className="compose-send-btn" onClick={() => this.props.setComposing()}>{trashSvg}</button>
+                    </div>
                 </form>
             </div>
         )

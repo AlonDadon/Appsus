@@ -1,36 +1,85 @@
+@font-face {
+    font-family: 'logo';
+    src: url(../font/Logo/ArchitectsDaughter-Regular.ttf);
+}
+@font-face {
+    font-family: 'headLines';
+    src: url(../font/ArchivoNarrow-Regular.ttf);
+}
+@font-face {
+    font-family: 'freeText';
+    src: url(../font/JosefinSans-VariableFont_wght.ttf);
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:"freeText";
     padding: 0;
     margin: 0;
     background-color: whitesmoke;
+    color: #797a92;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: inherit;
+    font-family: "headLines";
     font-weight: 500;
     line-height: 1.2;
-    color: inherit;
+    color: #291e3c;
     margin-top: 0;
     margin-bottom: .5rem;
+}
+h1{
+    font-size: 2.5rem;
 }
 
 a {
     text-decoration: none;
     color: inherit;
 }
-
+p{
+    margin: 0.5rem;;
+}
 button, a {
     cursor: pointer;
 }
 
 input {
+    font-family:"freeText";
+    /* font-family: "headLines"; */
     outline: none;
+    font-size: 1.2rem;
 }
-
+select{
+    font-family:"freeText";
+    /* font-family: "headLines"; */
+    outline: none;
+    font-size: 1.16rem;
+    color: #797a92;
+    border: solid 0.5px #e3d8fd;
+}
 textarea{
     resize: none;
+}
+
+
+@media screen and (min-width:600px){
+    .container{
+        max-width: 740px;
+        margin:0 auto;
+    }
+}
+@media screen and (min-width:800px){
+    .container{
+        max-width: 920px;
+        margin:0 auto;
+    }
+}
+@media screen and (min-width:1000px){
+    .container{
+        max-width: 1120px;
+        margin:0 auto;
+    }
 }

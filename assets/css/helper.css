@@ -9,6 +9,9 @@
 .space-around {
     justify-content: space-around;
 }
+.space-between{
+    justify-content: space-between;
+}
 
 .align-center {
     align-items: center;
@@ -22,6 +25,9 @@
     list-style: none;
 }
 
+.wrap{
+    flex-wrap: wrap;
+}
 .txt-center {
     text-align: center;
 }
@@ -39,13 +45,13 @@
 }
 
 .bold{
-    font-weight: 700;
+    color: rgb(59, 59, 59);
 }
 .hidden{
     visibility: hidden;
 }
-.wrap{
-    flex-wrap: wrap;
+.logo{
+    font-family:'logo' ;
 }
 
 .screen {

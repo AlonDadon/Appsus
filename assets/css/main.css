@@ -1,5 +1,8 @@
 @import './base.css';
 @import './home.css';
 @import './helper.css';
+@import './header.css';
+@import './footer.css';
+@import './loadre.css';
 @import '../../apps/mail/assets/css/mail-style.css';
 @import '../../apps/note/assets/css/note-style.css';

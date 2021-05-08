@@ -1,3 +1,16 @@
 @import './mail-preview.css';
 @import './mail-edit.css';
 @import './mail-filter.css';
+@import './side-bar.css';
+@import './mail-details.css';
+
+.main-container{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.mail-main-container{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}

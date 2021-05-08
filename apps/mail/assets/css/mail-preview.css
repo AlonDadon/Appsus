@@ -1,6 +1,13 @@
 .mail-preview{
+    position: relative;
     border-top: 1px solid gainsboro;
     border-bottom: 1px solid gainsboro;
+}
+.mail-info{
+    display: flex;
+    padding: 10px;
+    width: 50em;
+    justify-content: space-between;
 }
 .mail-preview li {
     display:flex;
@@ -13,10 +20,22 @@
     box-shadow: 9px 4px 7px -5px rgba(97,97,97,0.81);
 
 }
-.mail-preview:hover .preview-btn{
-background-color: rgb(214, 205, 205);
-visibility:visible;
+.preview-btn:hover{
+    box-shadow: 9px 4px 7px -5px rgba(97,97,97,0.81);
 }
-/* .preview-btn:hover{
-    background-color: rgb(165, 59, 59);
-} */
+.mail-preview .preview-btn{
+    position:absolute;
+    margin-inline-end: 5px;
+    right:0;
+    top: 10px;
+    background-color: none;
+    border:none;
+}
+.preview-btn.remove{
+    margin-inline-end: 50px;
+}
+
+.mail-preview:hover .preview-btn{
+    visibility:visible;
+}
+

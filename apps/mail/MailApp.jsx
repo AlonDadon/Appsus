@@ -1,15 +1,17 @@
 const { Route, Switch, Link } = ReactRouterDOM
-import { mailService } from './services/mail.service.js'
+import { mailService } from './services/mail-service.js'
 import { MailList } from './cmps/MailList.jsx'
 import { MailFilter } from './cmps/MailFiter.jsx'
 import { MailEdit } from './cmps/MailEdit.jsx'
+import { SideBar } from './cmps/SideBar.jsx'
+import { Loader } from '../../cmps/Loader.jsx'
 
 export class MailApp extends React.Component {
     state = {
         mails: null,
         filterBy: {
             txt: '',
-            isRead: false,
+            isRead: 'all',
             isStarred: false,
         },
         isComposing: false
@@ -18,10 +20,7 @@ export class MailApp extends React.Component {
         this.loadMails()
         // console.log(this.props.match);
     }
-    componentDidUpdate() {
-        const { mailId } = this.props.match.params
-    }
-    loadMails() {
+    loadMails = () => {
         mailService.query(this.state.filterBy)
             .then(mails => {
                 this.setState({ mails })
@@ -47,18 +46,18 @@ export class MailApp extends React.Component {
     render() {
         const { mails, isComposing } = this.state
         const { mailId } = this.props.match.params
-        if (!mails) return <h1>Loading...</h1>
+        console.log(mails);
+        if (!mails) return <Loader/>
         return (
-            <section className="mail-main-container">
-                <section>
-
+            <main className="main-container container">
+                <SideBar setComposing={this.setComposing} onSetFilter={this.onSetFilter} loadMails={this.loadMails}/>
+                <section className="mail-main-container">
+                    <MailFilter onSetFilter={this.onSetFilter} />
+                    {!mailId && <MailList mails={mails} onRemoveMail={this.onRemoveMail}
+                        onSetStarred={this.onSetStarred} onReadMail={this.onReadMail} />}
+                    {isComposing && <MailEdit setComposing={this.setComposing} />}
                 </section>
-                <MailFilter onSetFilter={this.onSetFilter} />
-                { !mailId && <MailList mails={mails} onRemoveMail={this.onRemoveMail}
-                    onSetStarred={this.onSetStarred} onReadMail={this.onReadMail} />}
-                <button onClick={ () => this.setComposing()}><Link className="compose-btn" to="/mail/inbox/compose" >Compose</Link></button>
-                {isComposing && <MailEdit setComposing={this.setComposing} />}
-            </section>
+            </main>
 
         )
     }

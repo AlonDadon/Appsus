@@ -1,0 +1,18 @@
+.mail-filter {
+    text-align: center;
+}
+.mail-filter input {
+    padding: 9.5px;
+    border-radius: 20px 0px 0px 20px;
+    border: none;
+    font-size:1rem;
+}
+#mailOptions{
+    font-size: 0.8rem;
+    padding: 10px;
+    width: 90px;
+    border: none;
+    /* border-radius: 20 0 0 0; */
+    border-radius: 0px 23px 19px 1px;
+    background-color: rgba(158, 198, 250, 0.637);
+}
