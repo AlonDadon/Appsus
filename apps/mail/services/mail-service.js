@@ -16,7 +16,6 @@ createMails()
 //check mails data as {mails={id,[mailInfo],}}
 function query(filterBy) {
     if (!filterBy) return Promise.resolve(gMails)
-console.log(filterBy);
     var { txt, isRead, isStarred, } = filterBy
     if (isRead === 'true') isRead = true;
     if (isRead === 'false') isRead = false;
@@ -34,7 +33,6 @@ console.log(filterBy);
                     (mail.body.toLowerCase()).includes(txt.toLowerCase()) ||
                     (mail.to.toLowerCase()).includes(txt.toLowerCase()))
     })
-    console.log(filteredMails);
     return Promise.resolve(filteredMails)
 }
 function createMails() {

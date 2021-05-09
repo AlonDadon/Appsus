@@ -14,7 +14,6 @@ export class MailFilter extends React.Component {
         const value = ev.target.type === 'number' ? +ev.target.value : ev.target.value
         this.setState({ filterBy: { ...this.state.filterBy, [field]: value } }, () => {
             this.props.onSetFilter(this.state.filterBy)
-            console.log(this.state.filterBy);
         })
     }
     onFilter = (ev) => {

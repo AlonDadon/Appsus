@@ -46,7 +46,6 @@ export class MailApp extends React.Component {
     render() {
         const { mails, isComposing } = this.state
         const { mailId } = this.props.match.params
-        console.log(mails);
         if (!mails) return <Loader/>
         return (
             <main className="main-container container">
